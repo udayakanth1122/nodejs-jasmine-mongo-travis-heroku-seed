@@ -1,0 +1,8 @@
+# Specifies intentionally untracked files to ignore when using Git
+
+# ignore the following files
+.DS_Store
+Thumbs.db
+
+# Ignoring the following folders
+node_modules/
