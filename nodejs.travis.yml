@@ -1,0 +1,35 @@
+#
+# Configuration
+#
+
+language: node_js
+
+node_js:
+  - "0.12"
+
+notifications:
+  email: true
+
+sudo: required
+
+branches:
+  only:
+  - master
+
+install:
+  - npm install
+
+before_script:
+
+script: npm test
+
+after_failure: cat /home/travis/build/udayakanth1122/nodejs-travis-heroku-seed-project/npm-debug.log
+
+after_success:
+  # Send coverage info off to cloud ppl
+  - cat coverage/lcov.info | node_modules/.bin/coveralls
+  - cat coverage/lcov.info | ./node_modules/.bin/codecov
+  
+deploy:
+  app: nodejs-travis-heroku-seed-project
+  provider: heroku
