@@ -30,6 +30,6 @@ after_success:
   - cat coverage/lcov.info | node_modules/.bin/coveralls
   - cat coverage/lcov.info | ./node_modules/.bin/codecov
   
-deploy:
-  app: nodejs-travis-heroku-seed-project
-  provider: heroku
+# deploy:
+#  app: nodejs-travis-heroku-seed-project
+#  provider: heroku
